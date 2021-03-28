@@ -65,7 +65,7 @@
         payload
       );
 
-      MsgElem.innerHTML = MsgElem.innerHTML + "; " + payload.data.message;
+      MsgElem.innerHTML = MsgElem.innerHTML + "<br>[" + new Date() + "] " + payload.data.message;
       
       // const notificationTitle = "LASSOL Message";
       // const notificationOptions = {
