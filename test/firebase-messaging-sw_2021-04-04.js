@@ -7,8 +7,8 @@
 
 // const messaging = firebase.messaging();
 
-importScripts('https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.3.1/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js');
 // Initialize the Firebase app in the service worker by passing in
 
 firebase.initializeApp({
@@ -38,9 +38,9 @@ const messaging = firebase.messaging();
 messaging.onBackgroundMessage(function (payload) {
   console.log('[firebase-messaging-sw.js] Received background message ', payload);
   // Customize notification here
-  const notificationTitle = "LASSOL Message";
+  const notificationTitle = payload.data.title;
   const notificationOptions = {
-    body: "Message: " + payload.data.message,
+    body: payload.data.message,
     icon: "/lassol-logo.png",
   };
 

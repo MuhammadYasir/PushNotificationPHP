@@ -34,7 +34,8 @@
     curl_close ( $ch );
   }
 
-  $token = 'dD41z8ynvGo:APA91bEXpZ9zwq-goiAua1BYEEtefXlQ45dQ3gEU29vQBmxDxAnT0cD5RyT51MS3Uv5z9CA8qn_zQJ42SJXn9bHBgN1EfCvcOpGDDfuVDWwYVX0CRaw_XsB__Wc2Bi4samHT0iqyMUT0';
+  // $token = 'dD41z8ynvGo:APA91bEXpZ9zwq-goiAua1BYEEtefXlQ45dQ3gEU29vQBmxDxAnT0cD5RyT51MS3Uv5z9CA8qn_zQJ42SJXn9bHBgN1EfCvcOpGDDfuVDWwYVX0CRaw_XsB__Wc2Bi4samHT0iqyMUT0';
+  $token = 'd6-IAj0taB97X540iQZSbQ:APA91bHzF6vGN9f3zloeuXaV3JtOXMN0bPHebt1AELOjYdSwtQLJQPMsPzHjNVJjovzjByWS3PQi6B5p9x128Ncp_-sqxeRQiZ5U9vPYZOZfcDVw9f4XpzZ5P4PPwUUdpriuDdqlekiA';
   $msg = 'mesage from yasir pc.';
   sendGCM($msg, $token);
 

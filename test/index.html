@@ -22,8 +22,8 @@
   <div id="notis"></div>
   <div id="err"></div>
 
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js"></script>
 
   <script>
     MsgElem = document.getElementById("msg");
@@ -59,13 +59,14 @@
         console.log("Unable to get permission to notify.", err);
       });
 
-    messaging.onMessage((payload) => {
-      console.log(
-        "[firebase-messaging-sw.js] Received message ",
-        payload
-      );
+    // messaging.onMessageReceived((payload) => {
+    //   console.log("messaging.onMessageReceived -> Received message ", payload );
+    // });
 
-      MsgElem.innerHTML = MsgElem.innerHTML + "<br>[" + new Date() + "] " + payload.data.message;
+    messaging.onMessage((payload) => {
+      console.log("[firebase-messaging-sw.js] Received message ", payload );
+
+      MsgElem.innerHTML = MsgElem.innerHTML + "<br>[" + new Date() + "] <b>" + payload.data.title + "</b> " + payload.data.message;
       
       // const notificationTitle = "LASSOL Message";
       // const notificationOptions = {
@@ -86,3 +87,4 @@
 </body>
 
 </html>
+
